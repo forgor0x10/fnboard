@@ -7,9 +7,15 @@ import { fileURLToPath } from "url";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-const domain = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+let domain;
+
+if (process.env.VERCEL_ENV == "production") {
+  domain = "https://fnboard.vercel.app";
+} else if (process.env.VERCEL_URL) {
+  domain = `https://${process.env.VERCEL_URL}`;
+} else {
+  domain = "http://localhost:3000";
+}
 
 export default async function handler(req, res) {
   const { page, channel } = req.query;
