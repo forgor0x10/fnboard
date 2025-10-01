@@ -1,0 +1,172 @@
+:root {
+  --base: #1e1e2e;
+  --text: #cdd6f4;
+  --overlay0: #6c7086;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text);
+  background: var(--base);
+  font: normal 12px Arial, sans-serif;
+}
+
+h1 {
+  font-weight: inherit;
+}
+
+span.dim {
+  color: var(--overlay0);
+}
+
+div.preview {
+  opacity: 50%;
+}
+
+a {
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(var(--text), var(--text)) no-repeat 0 100% / 100%
+    1px;
+  transition: color 250ms ease, background 250ms ease;
+}
+
+a:hover {
+  color: var(--base);
+  background: linear-gradient(var(--text), var(--text)) no-repeat 0 100% / 100%
+    100%;
+}
+
+button,
+input {
+  font: normal 12px Arial, sans-serif;
+  padding: 8px;
+  color: var(--text);
+  background: var(--base);
+  border: 1px solid var(--text);
+  transition: color 250ms ease, background 250ms ease;
+}
+
+button:hover,
+input:hover,
+input:focus,
+button.active {
+  color: var(--base);
+  background: var(--text);
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+button:active,
+input:active {
+  color: var(--text);
+  background: var(--base);
+}
+
+hr {
+  border: none;
+  background: var(--text);
+  height: 1px;
+}
+
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container .home-content {
+  width: 40rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.channel-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.channel-container .header-container {
+  text-align: center;
+}
+
+.channel-container .messages-container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  gap: 0.25rem;
+}
+
+.channel-container .input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.channel-container .input-container #content-input {
+  flex: 1;
+}
+
+.channel-container .meta-window-container {
+  position: absolute;
+  inset: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.channel-container .meta-window-container #meta-window-div {
+  display: none;
+  padding: 1rem;
+  width: 100%;
+  max-width: 40rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--text);
+  pointer-events: all;
+}
+
+.channel-container .meta-window-container #meta-window-div.visible {
+  display: flex;
+}
+
+.channel-container .meta-window-container #meta-window-div .row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.channel-container .meta-window-container #meta-window-div .row > * {
+  flex: 1;
+}
+
+.log-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.log-container .header-container {
+  text-align: center;
+}

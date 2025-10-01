@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/render?page=index"
+    },
+    {
+      "source": "/log",
+      "destination": "/api/render?page=log"
+    },
+    {
+      "source": "/channel/(.*)",
+      "destination": "/api/render?page=channel&channel=$1"
+    }
+  ]
+}

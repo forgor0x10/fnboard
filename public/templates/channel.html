@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fnboard</title>
+    <link type="text/css" href="/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="channel-container">
+      <div class="header-container">
+        <h1 class="logo">fnboard</h1>
+        <p>${channelName}</p>
+      </div>
+      <hr />
+      <div class="messages-container" id="messages-div">${messages}</div>
+      <div class="input-container">
+        <button id="show-meta-button">+</button>
+        <input placeholder="Message" id="content-input" />
+        <button id="send-button">&gt;</button>
+      </div>
+      <div class="meta-window-container">
+        <div id="meta-window-div">
+          <p>User</p>
+          <div class="row">
+            <input placeholder="Username" id="sender-input" />
+            <input placeholder="Tripcode" id="tripcode-input" />
+          </div>
+          <!-- <p>Message</p>
+          <div class="row">
+            <input placeholder="Attachment URL" id="attachment-input" />
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/js/channel.js"></script>
+  </body>
+</html>
