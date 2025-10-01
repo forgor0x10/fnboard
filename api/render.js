@@ -41,6 +41,13 @@ export default async function handler(req, res) {
 
       const data = await response.json();
       pageContent = pageContent.replace("${messages}", data.messageCount);
+
+      pageContent = pageContent.replace(
+        "${gitSha}",
+        process.env.VERCEL_GIT_COMMIT_SHA
+          ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)
+          : "0".repeat(8)
+      );
     }
 
     if (page === "channel") {
