@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         throw new Error(`HTTP Error: ${response.status}`);
       }
 
-      const data = await response.json();
+      messagesDivElement.replaceChildren();
 
-      messagesDivElement.innerHTML = "";
+      const data = await response.json();
 
       data.messages.forEach((message) => {
         messagesDivElement.innerHTML += renderMessageHTML(message);
@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert(`Error loading messages: ${error}`);
     }
   };
+
+  setInterval(() => {
+    loadMessages();
+  }, 5000);
 
   const showMetaButtonElement = document.getElementById("show-meta-button");
 
