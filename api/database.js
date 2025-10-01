@@ -3,6 +3,10 @@ import { MongoClient } from "mongodb";
 let client;
 
 export default async function handler(req, res) {
+  if (!req.body) {
+    return res.status(400).send("400 Bad request");
+  }
+
   const { request, content, sender, channel, tripcode } = req.body;
 
   try {
